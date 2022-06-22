@@ -1,0 +1,31 @@
+.App {
+  text-align: center;
+  background-color: rgb(91, 99, 49);
+  color: white;
+  height:100vh;
+  width:100vw;
+
+  .header-container {
+    display:flex;
+    justify-content: center;
+    gap:4rem;
+    margin-bottom: 3vh;
+
+    h1 {
+      font-size: 50px;
+      margin-top: 10vh;
+    }
+  
+    img {
+      width: 20vw;
+  
+    }
+  }
+
+  
+  
+}
+
+
+
+

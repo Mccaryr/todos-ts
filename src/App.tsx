@@ -1,24 +1,39 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import React, { useState } from 'react';
+import TodoForm from './components/TodoForm/TodoForm';
+import TodoList from './components/TodoList/TodoList';
+import HeaderImage from './assets/edited-header-image.png'
+import {TodoModel} from './models/TodoModel'
 
-function App() {
+const App: React.FC = () => {
+  
+  const [input, setInput] = useState<string>('');
+  const [todos, setTodos] = useState<Array<TodoModel>>([]);
+
+  const addTodo = (e: React.FormEvent) => {
+    e.preventDefault();
+    if(input) {
+      setTodos([...todos, {id: Date.now(), todo: input, isCompleted: false}])
+      setInput('');
+    }
+  }
+
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className='header-container'>
+          <h1>
+            Crikey Todos!
+          </h1>
+          <img src={HeaderImage} alt="Steve Irwin"/>
+      </div>
+      <div>
+        <TodoForm input={input} setInput={setInput} addTodo={addTodo}/>
+      </div>
+      <div>
+        <TodoList todos={todos} setTodos={setTodos} />
+      </div>
     </div>
   );
 }

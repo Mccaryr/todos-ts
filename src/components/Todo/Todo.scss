@@ -1,0 +1,36 @@
+.todo-container {
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(67, 146, 67);
+    width:40vw;
+    border-radius: 20px;
+    padding:10px;
+
+    input {
+        border:none;
+        background-color: rgb(67, 146, 67);
+        color: white;
+        font-size: 14px;
+        text-align: center;
+    }
+
+    .crud-icons {
+       display:flex;
+       gap:2vw;
+       
+       button{
+        background-color: transparent;
+        border: none;
+        color:white;
+        cursor:pointer;
+       }
+
+       button:hover {
+        color:goldenrod;
+       }
+    }
+
+    
+}
